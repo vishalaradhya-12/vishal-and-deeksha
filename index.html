@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal & Deeksha - Our Love Story ❤️</title>
+    <meta name="description"
+        content="A digital diary and interactive love story of Vishal and Deeksha - celebrating our journey to forever">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-background" id="heartsBackground"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">V & D</span>
+                <span class="logo-heart">❤️</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#timeline" class="nav-link">Our Story</a></li>
+                <li><a href="#diary" class="nav-link">Diary</a></li>
+                <li><a href="#messages" class="nav-link">Messages</a></li>
+                <li><a href="#memories" class="nav-link">Memory Jar</a></li>
+                <li><a href="#quiz" class="nav-link">Quiz</a></li>
+                <li><a href="#dreams" class="nav-link">Future</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="name-vishal">Vishal</span>
+                <span class="hero-heart">❤️</span>
+                <span class="name-deeksha">Deeksha</span>
+            </h1>
+            <p class="hero-subtitle">Our Journey to Forever</p>
+
+            <!-- Wedding Countdown -->
+            <div class="countdown-container">
+                <h3 class="countdown-title">Countdown to Our Wedding</h3>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="scrollToSection('gallery')">
+                Explore Our Story
+                <span class="button-arrow">→</span>
+            </button>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-element element-1">💕</div>
+            <div class="floating-element element-2">✨</div>
+            <div class="floating-element element-3">💖</div>
+            <div class="floating-element element-4">🌟</div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Our Beautiful Memories Together</h2>
+            <p class="section-subtitle">Every photo tells our story ❤️</p>
+
+            <div class="gallery-grid" id="realPhotosGallery">
+                <!-- Real photos will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Our Love Timeline</h2>
+            <p class="section-subtitle">Every moment that brought us closer</p>
+
+            <div class="timeline" id="timeline">
+                <!-- Timeline items will be added dynamically -->
+            </div>
+
+            <button class="add-moment-btn" onclick="openTimelineModal()">
+                + Add a Special Moment
+            </button>
+        </div>
+    </section>
+
+    <!-- Digital Diary Section -->
+    <section id="diary" class="diary-section">
+        <div class="container">
+            <h2 class="section-title">Our Digital Diary</h2>
+            <p class="section-subtitle">Capturing our thoughts and feelings</p>
+
+            <div class="diary-container">
+                <div class="diary-tabs">
+                    <button class="diary-tab active" data-tab="all">All Entries</button>
+                    <button class="diary-tab" data-tab="vishal">Vishal's Entries</button>
+                    <button class="diary-tab" data-tab="deeksha">Deeksha's Entries</button>
+                </div>
+
+                <button class="new-entry-btn" onclick="openDiaryModal()">
+                    ✍️ Write New Entry
+                </button>
+
+                <div class="diary-entries" id="diaryEntries">
+                    <!-- Diary entries will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Wall Section -->
+    <section id="messages" class="messages-section">
+        <div class="container">
+            <h2 class="section-title">Message Wall</h2>
+            <p class="section-subtitle">Leave sweet messages for each other 💌</p>
+
+            <div class="message-wall" id="messageWall">
+                <!-- Messages will be displayed here -->
+            </div>
+
+            <button class="add-message-btn" onclick="openMessageModal()">
+                💌 Leave a Message
+            </button>
+        </div>
+    </section>
+
+    <!-- Memory Jar Section -->
+    <section id="memories" class="memory-jar-section">
+        <div class="container">
+            <h2 class="section-title">Memory Jar</h2>
+            <p class="section-subtitle">Collecting precious moments, one memory at a time</p>
+
+            <div class="jar-container">
+                <div class="memory-jar" id="memoryJar">
+                    <div class="jar-lid"></div>
+                    <div class="jar-body">
+                        <div class="jar-memories" id="jarMemories">
+                            <!-- Memory notes will appear here -->
+                        </div>
+                    </div>
+                </div>
+                <button class="add-memory-btn" onclick="openMemoryModal()">
+                    + Add Memory
+                </button>
+            </div>
+
+            <div class="memories-display" id="memoriesDisplay">
+                <!-- Opened memories will display here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Couple Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">How Well Do We Know Each Other?</h2>
+            <p class="section-subtitle">Take the couple quiz and find out! 🎯</p>
+
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-start">
+                    <h3>Choose Your Player</h3>
+                    <div class="player-selection">
+                        <button class="player-btn" onclick="startQuiz('vishal')">
+                            <span class="player-icon">👨</span>
+                            <span>Vishal</span>
+                        </button>
+                        <button class="player-btn" onclick="startQuiz('deeksha')">
+                            <span class="player-icon">👩</span>
+                            <span>Deeksha</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Dreams Section -->
+    <section id="dreams" class="dreams-section">
+        <div class="container">
+            <h2 class="section-title">Our Future Together</h2>
+            <p class="section-subtitle">Dreams we're building together ✨</p>
+
+            <div class="dreams-grid">
+                <div class="dream-card">
+                    <div class="dream-icon">🏡</div>
+                    <h3>Our Dream Home</h3>
+                    <textarea class="dream-input" placeholder="Describe your dream home..." id="dreamHome"></textarea>
+                </div>
+                <div class="dream-card">
+                    <div class="dream-icon">✈️</div>
+                    <h3>Travel Bucket List</h3>
+                    <textarea class="dream-input" placeholder="Places we want to visit together..."
+                        id="dreamTravel"></textarea>
+                </div>
+                <div class="dream-card">
+                    <div class="dream-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Family Goals</h3>
+                    <textarea class="dream-input" placeholder="Our family dreams..." id="dreamFamily"></textarea>
+                </div>
+                <div class="dream-card">
+                    <div class="dream-icon">🎯</div>
+                    <h3>Life Goals</h3>
+                    <textarea class="dream-input" placeholder="What we want to achieve together..."
+                        id="dreamGoals"></textarea>
+                </div>
+            </div>
+
+            <button class="save-dreams-btn" onclick="saveDreams()">
+                💾 Save Our Dreams
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Made with ❤️ for Vishal & Deeksha</p>
+            <p class="footer-quote">"Two souls, one heart, forever together"</p>
+            <div class="footer-hearts">
+                <span>💕</span>
+                <span>💖</span>
+                <span>💗</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Diary Modal -->
+    <div class="modal" id="diaryModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeDiaryModal()">&times;</span>
+            <h3>New Diary Entry</h3>
+            <form id="diaryForm">
+                <div class="form-group">
+                    <label>Who's writing?</label>
+                    <select id="diaryAuthor" required>
+                        <option value="">Select...</option>
+                        <option value="vishal">Vishal</option>
+                        <option value="deeksha">Deeksha</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mood</label>
+                    <div class="mood-selector">
+                        <button type="button" class="mood-btn" data-mood="happy">😊</button>
+                        <button type="button" class="mood-btn" data-mood="love">😍</button>
+                        <button type="button" class="mood-btn" data-mood="excited">🤩</button>
+                        <button type="button" class="mood-btn" data-mood="grateful">🥰</button>
+                        <button type="button" class="mood-btn" data-mood="thoughtful">🤔</button>
+                    </div>
+                    <input type="hidden" id="diaryMood" required>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="diaryTitle" placeholder="Give your entry a title..." required>
+                </div>
+                <div class="form-group">
+                    <label>Your Thoughts</label>
+                    <textarea id="diaryContent" rows="6" placeholder="Write your heart out..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Save Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div class="modal" id="messageModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeMessageModal()">&times;</span>
+            <h3>Leave a Message</h3>
+            <form id="messageForm">
+                <div class="form-group">
+                    <label>From</label>
+                    <select id="messageFrom" required>
+                        <option value="">Select...</option>
+                        <option value="vishal">Vishal</option>
+                        <option value="deeksha">Deeksha</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="messageContent" rows="4" placeholder="Write something sweet..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Post Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Memory Modal -->
+    <div class="modal" id="memoryModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeMemoryModal()">&times;</span>
+            <h3>Add a Memory</h3>
+            <form id="memoryForm">
+                <div class="form-group">
+                    <label>Memory</label>
+                    <textarea id="memoryContent" rows="3" placeholder="A special moment to remember..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Add to Jar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Timeline Modal -->
+    <div class="modal" id="timelineModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeTimelineModal()">&times;</span>
+            <h3>Add a Special Moment</h3>
+            <form id="timelineForm">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="timelineDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="timelineTitle" placeholder="What happened?" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="timelineDesc" rows="3" placeholder="Tell the story..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Add to Timeline</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal -->
+    <div class="modal image-modal" id="imageModal">
+        <div class="image-modal-content">
+            <span class="modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
