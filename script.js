@@ -397,16 +397,16 @@ function filterDiaryEntries(filter) {
         const authorName = entry.author.charAt(0).toUpperCase() + entry.author.slice(1);
 
         div.innerHTML = `
-    < div class="diary-entry-header" >
+            <div class="diary-entry-header">
                 <div class="diary-entry-author">
                     <span class="diary-entry-mood">${moodEmoji}</span>
                     <span>${authorName}</span>
                 </div>
                 <div class="diary-entry-date">${formatDateTime(entry.date)}</div>
-            </div >
+            </div>
             <h3>${entry.title}</h3>
             <p>${entry.content}</p>
-`;
+        `;
 
         container.appendChild(div);
     });
@@ -493,10 +493,10 @@ function loadMessages() {
         const fromName = msg.from.charAt(0).toUpperCase() + msg.from.slice(1);
 
         card.innerHTML = `
-    < div class="message-from" > From: ${fromName}</div >
+            <div class="message-from">From: ${fromName}</div>
             <div class="message-content">"${msg.content}"</div>
             <div class="message-time">${formatDateTime(msg.date)}</div>
-`;
+        `;
 
         container.appendChild(card);
     });
